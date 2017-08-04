@@ -317,8 +317,26 @@ parseValue(driOptionValue *v, driOptionType type, const XML_Char *string)
             v->_bool = true;
             tail = string + 4;
         }
-        else
-            return false;
+        else {
+            /** Some drirc options, such as pp_shalde, were formerly enum values.
+             *  Now that they have been turned into boolean values, to achieve 
+             *  backward compatbility relax the check here a little bit */
+            XML_Char *start = string; 
+            int value = strToI(string, &tail, 0);
+            if (tail == start) {
+                /* no enum value found  */
+                string = start; 
+                return false;
+            } else {
+                if (value == 1) 
+                    v->_bool = true;
+                else if (value == 0) 
+                    v->_bool = false;
+                else 
+                    retrun false; /* wrong value here */
+            }
+	}
+            
         break;
       case DRI_ENUM: /* enum is just a special integer */
       case DRI_INT:
