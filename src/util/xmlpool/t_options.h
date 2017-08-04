@@ -220,22 +220,22 @@ DRI_CONF_OPT_BEGIN_B(float_depth, def) \
 DRI_CONF_OPT_END
 
 #define DRI_CONF_PP_CELSHADE(def) \
-DRI_CONF_OPT_BEGIN_V(pp_celshade,enum,def,"0:1") \
+DRI_CONF_OPT_BEGIN_B(pp_celshade,def) \
         DRI_CONF_DESC(en,gettext("A post-processing filter to cel-shade the output")) \
 DRI_CONF_OPT_END
 
 #define DRI_CONF_PP_NORED(def) \
-DRI_CONF_OPT_BEGIN_V(pp_nored,enum,def,"0:1") \
+DRI_CONF_OPT_BEGIN_B(pp_nored,def) \
         DRI_CONF_DESC(en,gettext("A post-processing filter to remove the red channel")) \
 DRI_CONF_OPT_END
 
 #define DRI_CONF_PP_NOGREEN(def) \
-DRI_CONF_OPT_BEGIN_V(pp_nogreen,enum,def,"0:1") \
+DRI_CONF_OPT_BEGIN_B(pp_nogreen,def) \
         DRI_CONF_DESC(en,gettext("A post-processing filter to remove the green channel")) \
 DRI_CONF_OPT_END
 
 #define DRI_CONF_PP_NOBLUE(def) \
-DRI_CONF_OPT_BEGIN_V(pp_noblue,enum,def,"0:1") \
+DRI_CONF_OPT_BEGIN_B(pp_noblue,def) \
         DRI_CONF_DESC(en,gettext("A post-processing filter to remove the blue channel")) \
 DRI_CONF_OPT_END
 
